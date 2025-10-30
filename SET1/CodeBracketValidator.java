@@ -1,4 +1,4 @@
-// Question - 22
+// Question 22
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;

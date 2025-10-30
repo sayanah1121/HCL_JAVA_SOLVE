@@ -1,4 +1,4 @@
-// Question - 24
+// Question 24
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
