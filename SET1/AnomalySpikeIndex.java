@@ -1,17 +1,18 @@
-// Q8
-import java.util.*;
+// Question 8
+import java.util.Scanner;
 
 public class AnomalySpikeIndex {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] metrics = new int[n];
         for (int i = 0; i < n; i++) {
-            metrics[i] = sc.nextInt();
+            metrics[i] = scanner.nextInt();
         }
 
         System.out.println(detectFirstAnomaly(metrics));
+        scanner.close();
     }
 
     public static int detectFirstAnomaly(int[] metrics) {

@@ -1,25 +1,30 @@
-//Q4
-import java.util.*;
+//Question 4
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class TopKAPIsByLoad {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Input number of API calls
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] apiIndex = new int[n];
         for (int i = 0; i < n; i++) {
-            apiIndex[i] = sc.nextInt();
+            apiIndex[i] = scanner.nextInt();
         }
         int[] loads = new int[n];
         for (int i = 0; i < n; i++) {
-            loads[i] = sc.nextInt();
+            loads[i] = scanner.nextInt();
         }
-        int k = sc.nextInt();
+        int k = scanner.nextInt();
 
         int[] result = getTopKAPIs(apiIndex, loads, k);
         for (int idx : result)
             System.out.println(idx);
+        scanner.close();
     }
 
     public static int[] getTopKAPIs(int[] apiIndex, int[] loads, int k) {

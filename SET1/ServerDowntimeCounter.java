@@ -1,25 +1,29 @@
-import java.util.*;
+// Question 2
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class ServerDowntimeCounter {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Read the size of startTime array
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] startTime = new int[n];
         for (int i = 0; i < n; i++) {
-            startTime[i] = sc.nextInt();
+            startTime[i] = scanner.nextInt();
         }
         // Read the size of endTime array
         int[] endTime = new int[n];
         for (int i = 0; i < n; i++) {
-            endTime[i] = sc.nextInt();
+            endTime[i] = scanner.nextInt();
         }
         // Total monitoring time
-        int t = sc.nextInt();
+        int t = scanner.nextInt();
 
         // Find total downtime and print
         System.out.println(getTotalDowntime(startTime, endTime, t));
+        scanner.close();
     }
 
     // Helper method to compute downtime

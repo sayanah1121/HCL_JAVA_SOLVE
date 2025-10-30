@@ -1,29 +1,38 @@
-import java.util.*;
+// Question 1
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
 
 public class ConcurrentSessionBreach {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         // Read number of events
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] timestamps = new int[n];
         String[] userIds = new String[n];
         String[] actions = new String[n];
 
         // Read timestamps
         for (int i = 0; i < n; i++) {
-            timestamps[i] = sc.nextInt();
+            timestamps[i] = scanner.nextInt();
         }
         // Read userIds
         for (int i = 0; i < n; i++) {
-            userIds[i] = sc.next();
+            userIds[i] = scanner.next();
         }
         // Read actions
         for (int i = 0; i < n; i++) {
-            actions[i] = sc.next();
+            actions[i] = scanner.next();
         }
         // Read session limit
-        int m = sc.nextInt();
+        int m = scanner.nextInt();
 
         List<String> result = getLimitBreaches(timestamps, userIds, actions, m);
 
@@ -31,6 +40,7 @@ public class ConcurrentSessionBreach {
         for (String user : result) {
             System.out.println(user);
         }
+        scanner.close();
     }
 
     public static List<String> getLimitBreaches(int[] timestamps, String[] userIds, String[] actions, int m) {

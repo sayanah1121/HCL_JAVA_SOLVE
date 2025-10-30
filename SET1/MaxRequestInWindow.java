@@ -1,19 +1,22 @@
-import java.util.*;
+// Question 3
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class MaxRequestInWindow {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Input number of timestamps
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] timestamp = new int[n];
         for (int i = 0; i < n; i++) {
-            timestamp[i] = sc.nextInt();
+            timestamp[i] = scanner.nextInt();
         }
         // Input window size
-        int windowSize = sc.nextInt();
+        int windowSize = scanner.nextInt();
 
         System.out.println(maxRequestInWindow(timestamp, windowSize));
+        scanner.close();
     }
 
     public static int maxRequestInWindow(int[] timestamp, int windowSize) {

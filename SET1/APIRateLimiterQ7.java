@@ -1,23 +1,28 @@
-// Q7
-import java.util.*;
+// Question 7
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class APIRateLimiterQ7 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Number of requests
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] user = new int[n];
         int[] time = new int[n];
-        for (int i = 0; i < n; i++) user[i] = sc.nextInt();
-        for (int i = 0; i < n; i++) time[i] = sc.nextInt();
-        int k = sc.nextInt();
-        int t = sc.nextInt();
+        for (int i = 0; i < n; i++) user[i] = scanner.nextInt();
+        for (int i = 0; i < n; i++) time[i] = scanner.nextInt();
+        int k = scanner.nextInt();
+        int t = scanner.nextInt();
 
         int[] result = getAllowedRequests(user, time, k, t);
         for (int i : result) {
             System.out.println(i);
         }
+        scanner.close();
     }
 
     static int[] getAllowedRequests(int[] user, int[] time, int k, int t) {

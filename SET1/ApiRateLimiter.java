@@ -1,25 +1,30 @@
-// Q5
-import java.util.*;
+// Question 5
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Scanner;
 
 public class ApiRateLimiter {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Number of requests
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] user = new int[n];
         for (int i = 0; i < n; i++) {
-            user[i] = sc.nextInt();
+            user[i] = scanner.nextInt();
         }
         int[] timestamp = new int[n];
         for (int i = 0; i < n; i++) {
-            timestamp[i] = sc.nextInt();
+            timestamp[i] = scanner.nextInt();
         }
-        int k = sc.nextInt();
+        int k = scanner.nextInt();
 
         int[] result = getAllowedRequests(user, timestamp, k);
         for (int val : result)
             System.out.println(val);
+        scanner.close();
     }
 
     // Implementation of the API rate limiter

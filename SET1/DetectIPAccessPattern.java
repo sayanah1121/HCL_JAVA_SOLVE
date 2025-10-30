@@ -1,26 +1,32 @@
-//Q6
-import java.util.*;
+//Question 6
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class DetectIPAccessPattern {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] ip = new int[n];
         for (int i = 0; i < n; i++) {
-            ip[i] = sc.nextInt();
+            ip[i] = scanner.nextInt();
         }
         int[] timestamp = new int[n];
         for (int i = 0; i < n; i++) {
-            timestamp[i] = sc.nextInt();
+            timestamp[i] = scanner.nextInt();
         }
-        int k = sc.nextInt();
-        int t = sc.nextInt();
+        int k = scanner.nextInt();
+        int t = scanner.nextInt();
 
         List<Integer> result = getSpammerIPs(ip, timestamp, k, t);
         for (int val : result) {
             System.out.println(val);
         }
+        scanner.close();
     }
 
     public static List<Integer> getSpammerIPs(int[] ip, int[] timestamp, int k, int t) {
@@ -28,7 +34,7 @@ public class DetectIPAccessPattern {
         int n = ip.length;
 
         for (int i = 0; i < n; i++) {
-            ipAccessMap.computeIfAbsent(ip[i], x -> new ArrayList<>()).add(timestamp[i]);
+            ipAccessMap.computeIfAbsent(ip[i], _ -> new ArrayList<>()).add(timestamp[i]);
         }
 
         List<Integer> result = new ArrayList<>();

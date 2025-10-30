@@ -1,4 +1,4 @@
-//Q 10
+//Question 10
 
 import java.util.ArrayList;
 import java.util.Collections;
