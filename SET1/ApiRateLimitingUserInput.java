@@ -28,20 +28,21 @@ public class ApiRateLimitingUserInput {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // take number of servers
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
 
         int[] capacity = new int[n];
         for (int i = 0; i < n; i++) {
-            capacity[i] = sc.nextInt();
+            capacity[i] = scanner.nextInt();
         }
 
         // take number of requests
-        long requests = sc.nextLong();
+        long requests = scanner.nextLong();
 
         int result = calculateSchedulingTime(capacity, requests);
         System.out.println("Minimum seconds required: " + result);
+        scanner.close();
     }
 }

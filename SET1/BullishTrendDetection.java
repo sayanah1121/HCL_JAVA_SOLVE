@@ -27,18 +27,19 @@ public class BullishTrendDetection {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] stockPrices = new int[n];
 
         for (int i = 0; i < n; i++) {
-            stockPrices[i] = sc.nextInt();
+            stockPrices[i] = scanner.nextInt();
         }
 
-        int k = sc.nextInt();
+        int k = scanner.nextInt();
 
         int result = calculateBullishTrends(stockPrices, k);
         System.out.println("Number of bullish trends of size : " + result);
+        scanner.close();
     }
 }

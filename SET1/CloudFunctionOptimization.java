@@ -40,18 +40,19 @@ public class CloudFunctionOptimization {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int k = sc.nextInt();
+        int k = scanner.nextInt();
 
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
 
         int[] functionCosts = new int[n];
         for (int i = 0; i < n; i++) {
-            functionCosts[i] = sc.nextInt();
+            functionCosts[i] = scanner.nextInt();
         }
 
         int result = maximumPoints(functionCosts, k);
         System.out.println("Maximum number of functions that can be run: " + result);
+        scanner.close();
     }
 }

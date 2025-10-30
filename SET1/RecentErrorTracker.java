@@ -8,15 +8,15 @@ import java.util.Scanner;
 
 public class RecentErrorTracker {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int k = sc.nextInt();
-        int t = sc.nextInt();
-        int n = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int k = scanner.nextInt();
+        int t = scanner.nextInt();
+        int n = scanner.nextInt();
         int[] timestamps = new int[n];
-        for (int i = 0; i < n; i++) timestamps[i] = sc.nextInt();
-        sc.nextInt(); // another n
+        for (int i = 0; i < n; i++) timestamps[i] = scanner.nextInt();
+        scanner.nextInt(); // another n
         String[] errorCodes = new String[n];
-        for (int i = 0; i < n; i++) errorCodes[i] = sc.next();
+        for (int i = 0; i < n; i++) errorCodes[i] = scanner.next();
         
         // find max timestamp
         int maxT = timestamps[n - 1];
@@ -56,6 +56,6 @@ public class RecentErrorTracker {
             }
             System.out.println();
         }
-        sc.close();
+        scanner.close();
     }
 }

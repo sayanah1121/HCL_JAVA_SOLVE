@@ -22,17 +22,17 @@ public class SuspiciousLoginPairs {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
         int[] timestamps = new int[n];
 
         for (int i = 0; i < n; i++) {
-            timestamps[i] = sc.nextInt();
+            timestamps[i] = scanner.nextInt();
         }
-        int timeWindow = sc.nextInt();
+        int timeWindow = scanner.nextInt();
 
         long result = countSuspiciousPairs(timestamps, timeWindow);
         System.out.println(result);
-        sc.close();
+        scanner.close();
     }
 }

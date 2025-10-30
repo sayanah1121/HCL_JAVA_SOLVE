@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class ProcessExecutionTimeline {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
         int[] start = new int[n];
-        for (int i = 0; i < n; i++) start[i] = sc.nextInt();
-        sc.nextInt(); // another n
+        for (int i = 0; i < n; i++) start[i] = scanner.nextInt();
+        scanner.nextInt(); // another n
         int[] end = new int[n];
-        for (int i = 0; i < n; i++) end[i] = sc.nextInt();
+        for (int i = 0; i < n; i++) end[i] = scanner.nextInt();
         
         // create list of intervals
         List<int[]> intervals = new ArrayList<>();
@@ -39,6 +39,6 @@ public class ProcessExecutionTimeline {
             total += (long) m[1] - m[0] + 1;
         }
         System.out.println(total);
-        sc.close();
+        scanner.close();
     }
 }

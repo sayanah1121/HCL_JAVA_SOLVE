@@ -32,19 +32,19 @@ public class MaxOfSubarrayMinimums {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] arr = new int[n];
     
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+            arr[i] = scanner.nextInt();
         }
 
-        int k = sc.nextInt();
+        int k = scanner.nextInt();
 
         int result = maximumSubarrayMinimum(arr, k);
         System.out.println("Maximum among all subarray minimums: " + result);
-        sc.close();
+        scanner.close();
     }
 }

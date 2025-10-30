@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class MaxStockProfit {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
         int[] prices = new int[n];
         for (int i = 0; i < n; i++) {
-            prices[i] = sc.nextInt();
+            prices[i] = scanner.nextInt();
         }
         // compute max profit
         int minPrice = Integer.MAX_VALUE;
@@ -21,6 +21,6 @@ public class MaxStockProfit {
             }
         }
         System.out.println(maxProfit);
-        sc.close();
+        scanner.close();
     }
 }

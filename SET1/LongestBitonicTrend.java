@@ -1,6 +1,6 @@
 // Question 28
 
-import java.util.*;
+import java.util.Scanner;
 
 public class LongestBitonicTrend {
 
@@ -40,18 +40,16 @@ public class LongestBitonicTrend {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        
-        int n = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
         int[] trends = new int[n];
-
         
         for (int i = 0; i < n; i++) {
-            trends[i] = sc.nextInt();
+            trends[i] = scanner.nextInt();
         }
 
         int result = longestBitonicTrend(trends);
         System.out.println("Length of longest bitonic subarray: " + result);
+        scanner.close();
     }
 }
