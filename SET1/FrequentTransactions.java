@@ -1,9 +1,5 @@
 // Question 53
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class FrequentTransactions {
@@ -29,36 +25,43 @@ public class FrequentTransactions {
     }
     
     public static int[] sortTransactions(int[] transactions) {
-        // Create a list of pairs (frequency, amount) for sorting
-        List<int[]> pairs = new ArrayList<>();
-        
-        // Calculate frequency of each transaction amount
-        Map<Integer, Integer> frequencyMap = new HashMap<>();
-        for (int amount : transactions) {
-            frequencyMap.put(amount, frequencyMap.getOrDefault(amount, 0) + 1);
-        }
-        
-        // Create pairs for sorting: [frequency, amount, original_amount]
-        for (int amount : transactions) {
-            int freq = frequencyMap.get(amount);
-            pairs.add(new int[]{freq, amount, amount});
-        }
-        
-        // Sort first by frequency (ascending), then by amount (ascending)
-        pairs.sort((a, b) -> {
-            if (a[0] != b[0]) {
-                return a[0] - b[0]; // Sort by frequency ascending
-            } else {
-                return a[1] - b[1]; // Sort by amount ascending if frequencies are equal
+        int n = transactions.length;
+        int[] frequencies = new int[n];
+
+        // Step 1: Calculate frequency of each transaction.
+        // For each transaction, iterate through the entire list to count its occurrences.
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            for (int j = 0; j < n; j++) {
+                if (transactions[i] == transactions[j]) {
+                    count++;
+                }
             }
-        });
-        
-        // Extract the sorted amounts
-        int[] result = new int[transactions.length];
-        for (int i = 0; i < pairs.size(); i++) {
-            result[i] = pairs.get(i)[2]; // original amount
+            frequencies[i] = count;
+        }
+
+        // Step 2: Sort the transactions using a bubble sort algorithm.
+        // The sorting is based on frequency first, then by amount.
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                // Condition for swapping:
+                // 1. If frequency of the current element is greater than the next.
+                // 2. Or if frequencies are equal, but the current element's amount is greater than the next.
+                if (frequencies[j] > frequencies[j + 1] || (frequencies[j] == frequencies[j + 1] && transactions[j] > transactions[j + 1])) {
+                    // Swap frequencies
+                    int tempFreq = frequencies[j];
+                    frequencies[j] = frequencies[j + 1];
+                    frequencies[j + 1] = tempFreq;
+
+                    // Swap transaction amounts
+                    int tempAmount = transactions[j];
+                    transactions[j] = transactions[j + 1];
+                    transactions[j + 1] = tempAmount;
+                }
+            }
         }
         
-        return result;
+        // Step 3: Return the sorted transactions array.
+        return transactions;
     }
 }
