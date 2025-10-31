@@ -1,4 +1,4 @@
-//  Q 57
+//  Question 57
 import java.util.Scanner;
 
 public class LongestExecutionSlot {

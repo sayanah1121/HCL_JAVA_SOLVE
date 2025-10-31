@@ -1,4 +1,4 @@
-// Q 52
+// Question 52
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;

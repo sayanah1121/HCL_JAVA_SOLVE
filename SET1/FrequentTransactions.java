@@ -1,18 +1,22 @@
-// Q 53
+// Question 53
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class FrequentTransactions {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
         // Read number of transactions
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] transactions = new int[n];
         
         // Read transaction amounts
         for (int i = 0; i < n; i++) {
-            transactions[i] = sc.nextInt();
+            transactions[i] = scanner.nextInt();
         }
         
         // Get sorted transactions and print
@@ -21,7 +25,7 @@ public class FrequentTransactions {
             System.out.println(value);
         }
         
-        sc.close();
+        scanner.close();
     }
     
     public static int[] sortTransactions(int[] transactions) {

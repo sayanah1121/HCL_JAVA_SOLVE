@@ -1,5 +1,5 @@
-// Q 56
-import java.util.*;
+// Question 56
+import java.util.Scanner;
 
 public class EfficientDroneDescent {
     
