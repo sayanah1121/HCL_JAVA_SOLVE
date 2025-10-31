@@ -10,6 +10,7 @@ public class EqualString {
         int n = str1.length();
         if (str2.length() != n) {
             System.out.println(-1);
+            scanner.close();
             return;
         }
         int[] freq1 = new int[26];
@@ -18,11 +19,13 @@ public class EqualString {
         for (char c : str2.toCharArray()) freq2[c - 'a']++;
         if (!Arrays.equals(freq1, freq2)) {
             System.out.println(-1);
+            scanner.close();
             return;
         }
         for (int k = n; k >= 0; k--) {
             if (str1.substring(n - k).equals(str2.substring(0, k))) {
                 System.out.println(n - k);
+                scanner.close();
                 return;
             }
         }
